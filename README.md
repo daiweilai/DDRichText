@@ -3,7 +3,7 @@ This Framework is forked from https://github.com/TigerWf/WFCoretext . Just like 
 
 Demo Snapshot  
 ----------------------------------- 
-![github](https://github.com/daiweilai/DDClock/blob/master/DDClock.gif "github")
+![github](https://github.com/daiweilai/DDRichText/blob/master/personal_showBac%402x.png "github")
 
 Setup
 ----------------------------------- 
