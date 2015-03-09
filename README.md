@@ -8,7 +8,7 @@ Demo Snapshot
 Setup
 ----------------------------------- 
 * Copy DDRichTextLib to your project
-* When you want to use DDRichText just 
+* When you want to use DDRichText just like that
 		
 		#import "DDRichTextViewController.h"
 		
