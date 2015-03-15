@@ -10,6 +10,7 @@
 #import "YMShowImageView.h"
 #import "YMTextData.h"
 #import "YMReplyInputView.h"
+#import "UIImageView+WebCache.h"
 
 @protocol DDRichTextViewDelegate <NSObject>
 @required

@@ -9,9 +9,5 @@
 #import "DDRichTextViewController.h"
 
 @interface TestViewController : DDRichTextViewController<DDRichTextViewDataSource,DDRichTextViewDelegate>
-    
-       
-    
-
 
 @end
