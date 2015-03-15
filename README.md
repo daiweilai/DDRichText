@@ -3,21 +3,25 @@ This Framework is forked from https://github.com/TigerWf/WFCoretext . Just like 
 
 Demo Snapshot  
 ----------------------------------- 
-![github](https://github.com/daiweilai/DDClock/blob/master/DDClock.gif "github")
+![github](https://github.com/daiweilai/DDRichText/blob/master/DDRichTextGif.gif "github")
 
 Setup
 ----------------------------------- 
 * Copy DDRichTextLib to your project
-* When you want to use DDRichText just 
+* When you want to use DDRichText just like that
+		
 		#import "DDRichTextViewController.h"
+		
 * Enjoy it
 
 Using
 ----------------------------------- 
 * Firstly, you should create a viewController and let it inherit DDRichTextViewController and implement DDRichTextViewDataSource,DDRichTextViewDelegate
 * Secondly, in your viewController add 
+		
 		self.delegate = self;
 		self.dataSource = self;
+		
 *Thirdly you need to create an data model inherit YMTextData
 		
 		YMTextData *ymData = [[YMTextData alloc] init];
