@@ -17,7 +17,7 @@
 @property (nonatomic,strong) NSMutableArray *defineAttrData;//自行添加 元素为每条回复中的自行添加的range组成的数组 如：第一条回复有（0，2）和（5，2） 第二条为（0，2）。。。。可以为nil
 @property (nonatomic,strong) NSMutableArray *replyDataSource;//回复内容数据源（未处理）可以为nil
 @property (nonatomic,strong)NSString *name;//发布说说人的姓名 可以为nil
-@property (nonatomic,strong)UIImage *headPic;//发布说说人的头像 可以为nil
+@property (nonatomic,strong)NSString *headPicURL;//发布说说人的头像 可以为nil 支持网络异步加载
 @property (nonatomic,strong)NSString *intro;//可以用来显示简介或者时间 可以为nil
 
 

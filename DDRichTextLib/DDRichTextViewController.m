@@ -5,7 +5,7 @@
 //  Created by David on 15/2/6.
 //  Copyright (c) 2015年 tigerwf. All rights reserved.
 //
-
+#import "UIImageView+WebCache.h"
 #import "DDRichTextViewController.h"
 
 @interface DDRichTextViewController()<UITableViewDataSource,UITableViewDelegate,cellDelegate,InputDelegate>
@@ -90,7 +90,9 @@
 		}
 	}
     YMTextData *data = [[self dataSource] dataForRowAtIndex:[indexPath section]];
-    cell.headerImage.image = data.headPic;
+	//这句话让头像 支持异步加载
+	[cell.headerImage sd_setImageWithURL:[NSURL URLWithString:data.headPicURL] placeholderImage:[UIImage imageNamed:@"nilPic.png"]];
+//    cell.headerImage.image = data.headPic;
     cell.nameLbl.text = data.name;
     cell.introLbl.text = data.intro;
     [cell setYMViewWith:data];
@@ -191,11 +193,13 @@
 
 #pragma mark - 图片点击事件回调
 - (void)showImageViewWithImageViews:(NSArray *)imageViews byClickWhich:(NSInteger)clickTag{
+	[[self navigationController] setNavigationBarHidden:YES animated:YES];
     UIView *maskview = [[UIView alloc] initWithFrame:self.view.bounds];
     maskview.backgroundColor = [UIColor blackColor];
     [self.view addSubview:maskview];
     YMShowImageView *ymImageV = [[YMShowImageView alloc] initWithFrame:self.view.bounds byClick:clickTag appendArray:imageViews];
     [ymImageV show:maskview didFinish:^(){
+		[[self navigationController] setNavigationBarHidden:NO animated:YES];
         [UIView animateWithDuration:0.5f animations:^{
             ymImageV.alpha = 0.0f;
             maskview.alpha = 0.0f;

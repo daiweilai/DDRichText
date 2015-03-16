@@ -7,6 +7,7 @@
 //
 
 #import "YMShowImageView.h"
+#import "UIImageView+WebCache.h"
 
 @implementation YMShowImageView{
 
@@ -72,8 +73,10 @@
         imageScrollView.minimumZoomScale = 1;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[appendArray objectAtIndex:i]]];
-        imageView.image = img;
+		//这句话让图片支持网络异步加载
+		[imageView sd_setImageWithURL:[NSURL URLWithString:[appendArray objectAtIndex:i]] placeholderImage:[UIImage imageNamed:@"nilPic.png"]];
+//        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[appendArray objectAtIndex:i]]];
+//        imageView.image = img;
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         [imageScrollView addSubview:imageView];
         [_scrollView addSubview:imageScrollView];

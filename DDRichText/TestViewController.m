@@ -7,6 +7,7 @@
 //
 
 #import "TestViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface TestViewController ()
 
@@ -20,14 +21,16 @@ NSMutableArray * ymDataArray;
 	
 	self.title = @"DDRichText";
 	
+	
+	//图片支持网络异步加载
 	NSMutableArray *_imageDataSource = [NSMutableArray arrayWithCapacity:0];
-	[_imageDataSource addObject:@"1.png"];
-	[_imageDataSource addObject:@"2.png"];
-	[_imageDataSource addObject:@"3.png"];
-	[_imageDataSource addObject:@"3.png"];
-	[_imageDataSource addObject:@"2.png"];
-	[_imageDataSource addObject:@"1.png"];
-	[_imageDataSource addObject:@"1.png"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/privateinvestocat.jpg"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/gracehoppertocat.jpg"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/jetpacktocat.png"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/minertocat.png"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/luchadortocat.png"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/saritocat.png"];
+	[_imageDataSource addObject:@"https://octodex.github.com/images/steroidtocat.png"];
 	
 	NSMutableArray *_replyDataSource = [[NSMutableArray alloc] init];//回复数据来源
 	[_replyDataSource addObject:@"@Della:@戴伟来 DDRichText棒棒哒！ @daiweilai： @daiweilai @戴伟来:I am Della，这是一个IOS库[em:01:][em:02:][em:03:]"];
@@ -41,12 +44,10 @@ NSMutableArray * ymDataArray;
     ymData.replyDataSource = _replyDataSource;
     ymData.name = @"David";
     ymData.intro = @"2015-2-8";
-	ymData.headPic = [UIImage imageNamed:@"1.png"];
+	ymData.headPicURL = @"https://octodex.github.com/images/mummytocat.gif";
     [ymDataArray addObject:ymData];
     self.delegate = self;
     self.dataSource = self;
-	
-   
 }
 
 -(NSString *)senderName{

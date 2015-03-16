@@ -7,7 +7,7 @@
 // 2 3 2 2 2 3 1 3 2 1
 
 #import "YMTableViewCell.h"
-
+#import "UIImageView+WebCache.h"
 #import "ContantHead.h"
 #import "YMTapGestureRecongnizer.h"
 
@@ -36,7 +36,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         _headerImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 5, 50, TableHeader)];
-        _headerImage.backgroundColor = [UIColor blackColor];
+        _headerImage.backgroundColor = [UIColor clearColor];
 		_headerImage.userInteractionEnabled = YES;
 		UIGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didHeadPicAndNamePress)];
 		[_headerImage addGestureRecognizer:tap1];
@@ -182,7 +182,9 @@
         tap.appendArray = ymData.showImageArray;
         image.backgroundColor = [UIColor clearColor];
         image.tag = kImageTag + i;
-        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[ymData.showImageArray objectAtIndex:i]]];
+//		这句话 让图片 支持网络异步加载图片
+		[image sd_setImageWithURL:[NSURL URLWithString:[ymData.showImageArray objectAtIndex:i]] placeholderImage:[UIImage imageNamed:@"nilPic.png"]];
+//        image.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[ymData.showImageArray objectAtIndex:i]]];
         [self.contentView addSubview:image];
         [_imageArray addObject:image];
         

@@ -34,7 +34,7 @@
         _foldOrNot = YES;
         _islessLimit = NO;
         _name = @"";
-        _headPic = [UIImage new];
+        _headPicURL = @"";
         _intro = @"";
     }
     return self;
