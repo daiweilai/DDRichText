@@ -9,7 +9,7 @@
 #import "TestViewController.h"
 #import "UIImageView+WebCache.h"
 
-@interface TestViewController ()
+@interface TestViewController ()<DDRichTextViewDataSource,DDRichTextViewDelegate>
 
 @end
 
