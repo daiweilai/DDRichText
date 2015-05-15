@@ -7,6 +7,12 @@ Demo Snapshot
 
 Setup
 ----------------------------------- 
+#### CocoaPods
+With CocoaPods you can simply add `DDRichText` in your Podfile:
+```
+pod 'DDRichText', '~> 1.0.0'
+```
+#### Source File
 * Copy DDRichTextLib to your project
 * When you want to use DDRichText just like that
 		
